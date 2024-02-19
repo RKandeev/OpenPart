@@ -37,7 +37,7 @@ const animation5 = lottie.loadAnimation({
 const animation6 = lottie.loadAnimation({
     container: document.getElementById('stairs-animation'), // контейнер для анимации
     renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
+    loop: true, // зацикливание анимации
     autoplay: true, // автоматический запуск анимации
     path: './assets/animations/stairs.json' // путь к JSON-файлу с анимацией
 });
@@ -63,11 +63,17 @@ const animation9 = lottie.loadAnimation({
     autoplay: true, // автоматический запуск анимации
     path: './assets/animations/scheme.json' // путь к JSON-файлу с анимацией
 });
-
 const animation10 = lottie.loadAnimation({
     container: document.getElementById('end-sensor'), // контейнер для анимации
     renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
     loop: true, // зацикливание анимации
     autoplay: true, // автоматический запуск анимации
     path: './assets/animations/sensor.json' // путь к JSON-файлу с анимацией
+});
+const animation11 = lottie.loadAnimation({
+    container: document.getElementById('end-sensor2'), // контейнер для анимации
+    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
+    loop: true, // зацикливание анимации
+    autoplay: true, // автоматический запуск анимации
+    path: './assets/animations/matrix.json' // путь к JSON-файлу с анимацией
 });

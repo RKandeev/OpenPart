@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="./assets/img/fav.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/styles/main.css">
     <title>Клуб финансовой эффективности</title>
@@ -13,7 +12,7 @@
 <body>
 <header class="wrapper">
     <div class="header-logo">
-        <svg width="100%" height="100%" viewBox="0 0 1263 286" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:30;">
+        <svg width="100%" height="100%" viewBox="0 0 1263 286" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:30;">
     <g transform="matrix(1,0,0,1,-6862,-1493)">
         <g id="Artboard3" transform="matrix(0.761302,0,0,0.370466,1637.95,939.894)">
             <rect x="6862" y="1493" width="1659" height="772" style="fill:none;"/>
@@ -113,135 +112,17 @@
         </ul>
     </div>
     <nav class="desktop">
-        <a href="./index.html" class="nav-link ">О проекте</a>
-        <a href="./check.html" class="nav-link active">Проверь себя</a>
+        <a href="./index.html" class="nav-link active">О проекте</a>
+        <a href="./check.html" class="nav-link ">Проверь себя</a>
         <a href="./sign-up.html" class="nav-link link-personal">Личный кабинет</a>
     </nav>
 </header>
-<main >
-    <section class="main-sect wrapper">
-        <div class="main-blocks">
-            <div class="main-block">
-                <p>Первый шаг на пути финансового развития – это понимание своей стартовой позиции.</p>
-                <p>Определите её с помощью наших тестов.</p>
-            </div>
-            <div class="stairs-block">
-                <div id="stairs-animation"></div>
-            </div>
-        </div>
-        <div class="test-blocks">
-            <div class="test-block">
-                <div id="sensor-animation"></div>
-                <div class="test-info">
-                    <div class="test-title">Оцените свои навыки в принятии финансовых решений</div>
-                    <div class="test-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Пройти тест</div>
-                </div>
-            </div>
-            <div class="test-block">
-                <div id="matrix-animation"></div>
-                <div class="test-info">
-                    <div class="test-title">Определите свой уровень финансовой эффективности</div>
-                    <div class="test-btn" data-bs-toggle="modal" data-bs-target="#secondTest">Пройти тест</div>
-                </div>
-            </div>
-        </div>
+<main class="wrapper">
+    <section class="test-end-sect">
+        <div id="end-sensor2"></div>
+        <div class="test-end-text">Поздравляем! Вы сделали важный шаг в своем финансовом развитии. Результаты теста Вы сможете посмотреть в своем Личном кабинете</div>
+        <a href="./sign-up.html" class="blue-btn">Создать личный кабинет</a>
     </section>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content wrapper">
-                <div class="modal-body" id="modal_top">
-                    <div class="modal-top">
-                        <h1 class="modal-title" id="exampleModalLabel">Проверка навыков в принятии финансовых решений</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-test-block">
-                        <div class="question" id="question"></div>
-                        <div class="answers-block" id="answers-block">
-                            <div class="form-check firstTestFormCheck d-none">
-                                <input class="form-check-input firstTestForm" type="radio" data-number="1" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label choice" data-number="1" for="flexRadioDefault1"></label>
-                            </div>
-                            <div class="form-check firstTestFormCheck d-none">
-                                <input class="form-check-input firstTestForm" type="radio" data-number="2" name="flexRadioDefault" value="" id="flexRadioDefault2">
-                                <label class="form-check-label choice" data-number="2" for="flexRadioDefault2"></label>
-                            </div>
-                            <div class="form-check firstTestFormCheck d-none">
-                                <input class="form-check-input firstTestForm" type="radio" data-number="3" name="flexRadioDefault" id="flexRadioDefault3" >
-                                <label class="form-check-label choice" data-number="3" for="flexRadioDefault3"></label>
-                            </div>
-                            <div class="form-check firstTestFormCheck d-none">
-                                <input class="form-check-input firstTestForm" type="radio" data-number="4" name="flexRadioDefault" value="" id="flexRadioDefault4">
-                                <label class="form-check-label choice" data-number="4" for="flexRadioDefault4"></label>
-                            </div>
-                            <div class="form-check firstTestFormCheck d-none">
-                                <input class="form-check-input firstTestForm" type="radio" data-number="5" name="flexRadioDefault" id="flexRadioDefault5" >
-                                <label class="form-check-label choice" data-number="5" for="flexRadioDefault5"></label>
-                            </div>
-                            <div class="form-check firstTestFormCheck d-none">
-                                <input class="form-check-input firstTestForm" type="radio" data-number="6" name="flexRadioDefault" id="flexRadioDefault6" >
-                                <label class="form-check-label choice" data-number="6" for="flexRadioDefault6"></label>
-                            </div>
-                        </div>
-                        <button class="next-btn" id="next-test-btn">Дальше</button>
-                        <div class="progress-bar" id="progress-bar">
-                            <div id="progressBarFull"></div>
-                        </div>
-                        <div class="progress-counter" id="progress-counter"></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="secondTest" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content wrapper">
-                <div class="modal-body" id="modal_top2">
-                    <div class="modal-top">
-                        <h1 class="modal-title" id="secondTestLabel">Диагностика своей финансовой эффективности</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-test-block">
-                        <div class="question" id="secondTest-question"></div>
-                        <div class="answers-block" id="secondTest-answers-block">
-                            <div class="form-check secondTestFormCheck d-none">
-                                <input class="form-check-input secondTestForm" type="radio" data-number="1" name="secondTest-flexRadioDefault" id="secondTest-flexRadioDefault1">
-                                <label class="form-check-label secondTest-choice" data-number="1" for="secondTest-flexRadioDefault1"></label>
-                            </div>
-                            <div class="form-check secondTestFormCheck d-none">
-                                <input class="form-check-input secondTestForm" type="radio" data-number="2" name="secondTest-flexRadioDefault" value="" id="secondTest-flexRadioDefault2">
-                                <label class="form-check-label secondTest-choice" data-number="2" for="secondTest-flexRadioDefault2"></label>
-                            </div>
-                            <div class="form-check secondTestFormCheck d-none">
-                                <input class="form-check-input secondTestForm" type="radio" data-number="3" name="secondTest-flexRadioDefault" id="secondTest-flexRadioDefault3" >
-                                <label class="form-check-label secondTest-choice" data-number="3" for="secondTest-flexRadioDefault3"></label>
-                            </div>
-                            <div class="form-check secondTestFormCheck d-none">
-                                <input class="form-check-input secondTestForm" type="radio" data-number="4" name="secondTest-flexRadioDefault" value="" id="secondTest-flexRadioDefault4">
-                                <label class="form-check-label secondTest-choice" data-number="4" for="secondTest-flexRadioDefault4"></label>
-                            </div>
-                            <div class="form-check secondTestFormCheck d-none">
-                                <input class="form-check-input secondTestForm" type="radio" data-number="5" name="secondTest-flexRadioDefault" id="secondTest-flexRadioDefault5" >
-                                <label class="form-check-label secondTest-choice" data-number="5" for="secondTest-flexRadioDefault5"></label>
-                            </div>
-                            <div class="form-check secondTestFormCheck d-none">
-                                <input class="form-check-input secondTestForm" type="radio" data-number="6" name="secondTest-flexRadioDefault" id="secondTest-flexRadioDefault6" >
-                                <label class="form-check-label secondTest-choice" data-number="6" for="secondTest-flexRadioDefault6"></label>
-                            </div>
-                        </div>
-                        <button class="next-btn" id="secondTest-next-test-btn">Дальше</button>
-                        <div class="progress-bar" id="secondTest-progress-bar">
-                            <div id="secondTest-progressBarFull"></div>
-                        </div>
-                        <div class="progress-counter" id="secondTest-progress-counter"></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <a href="./test-end.html" id="test-end" class="d-none"></a>
-    <a href="./test-end2.html" id="test-end2" class="d-none"></a>
 </main>
 <footer>
     <section class="wrapper footer-blocks">
@@ -343,8 +224,6 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
-<script src="./assets/script/test.js"></script>
-<script src="./assets/script/fixtest.js"></script>
 <script src="./assets/script/script.js"></script>
 </body>
 </html>

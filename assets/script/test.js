@@ -118,6 +118,7 @@ let questions = [
     },
 ];
 let MAX_QUESTIONS = 10;
+
 startGame = () => {
     questionCounter = 0;
     score = 0;
@@ -125,7 +126,6 @@ startGame = () => {
     getNewQuestion();
 };
 getNewQuestion = () => {
-
     answers = [];
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         //go to the end page
@@ -160,7 +160,10 @@ getNewQuestion = () => {
     availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
 };
-
+function scroll(){
+    const modal_top = document.getElementById('modal_top')
+    modal_top.scrollTop = 0;
+}
 next.addEventListener('click', () =>{
     if (!acceptingAnswers) return;
     acceptingAnswers = false;
@@ -176,6 +179,8 @@ next.addEventListener('click', () =>{
     }
     console.log(score)
     getNewQuestion();
+    scroll();
+
 
 });
 startGame();

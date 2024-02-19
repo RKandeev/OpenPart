@@ -127,12 +127,16 @@ startGame2 = () => {
     availableQuestions2 = [...questions2];
     getNewQuestion2();
 };
+function scroll(){
+    const modal_top = document.getElementById('modal_top2')
+    modal_top.scrollTop = 0;
+}
 getNewQuestion2 = () => {
 
     answers2 = [];
     if (availableQuestions2.length === 0 || questionCounter2 >= MAX_QUESTIONS2) {
         //go to the end page
-        document.getElementById('test-end').click()
+        document.getElementById('test-end2').click()
     }
     if (questionCounter2 === MAX_QUESTIONS2-1){
         next2.innerText = "Завершить"
@@ -179,6 +183,6 @@ next2.addEventListener('click', () =>{
     }
     console.log(score2)
     getNewQuestion2();
-
+    scroll();
 });
 startGame2();
