@@ -458,7 +458,7 @@ a.forgot-password{
         height: 40px;
         background-size: 40px;
     }
-    .accordion-img{
+    .accordion-img img{
         width: 60%;
         height: 60%;
         margin: 0 auto;
@@ -628,8 +628,8 @@ a.forgot-password{
         background-size: 30px;
     }
     .accordion-img{
-        width: 60%;
-        height: 60%;
+        width: 40%;
+        height: 40%;
         margin: 0 auto;
     }
     .accord-blocks{
