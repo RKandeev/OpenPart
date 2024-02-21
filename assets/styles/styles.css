@@ -3,7 +3,7 @@
     padding: 0 200px;
 }
 section{
-    padding: 100px 0;
+    margin: 80px 0;
 }
 .d-none{
     display: none;
@@ -69,10 +69,10 @@ section{
     right: 95px;
     position: absolute;
     display: grid;
-    padding: 42px 0;
+    padding: 42px 0 0;
     margin: 0;
     list-style-type: none;
-    transform: translateY(-100%);
+    transform: translateY(-110%);
     transition: .3s;
     width: 200px;
     box-shadow: 0 4px 6px 0 rgba(192, 192, 192, 0.25);
@@ -135,15 +135,16 @@ a.link-personal:hover{
 /*Greeting section*/
 .greeting-sect{
     display: flex;
-    align-items: center;
     justify-content: space-between;
     font-size: 20px;
-    gap: 40px;
 }
 .greeting-info{
     max-width: 45%;
 }
-.greeting-sect h1{
+.main-block.greeting-info{
+    max-width: none;
+}
+.greeting-info h1{
     font-size: 60px;
     margin-bottom: 23px;
 }
@@ -153,10 +154,7 @@ a.link-personal:hover{
     gap: 16px;
     color: #282828;
 }
-#logo-animation{
-    position: relative;
-    right: -100px;
-}
+
 
 /*categories section*/
 #magnifier-animation{
@@ -177,10 +175,15 @@ h2{
     display: flex;
     align-items: center;
     max-width: 770px;
+    gap: 25px;
 }
-.category-img{
+.category-img {
     width: 113px;
     height: 113px;
+}
+.category-info{
+    font-size: 18px;
+    width: 436px;
 }
 /*Video section*/
 .video-sect{
@@ -210,7 +213,7 @@ a.blue-btn{
 }
 /*Footer*/
 footer{
-    background-color: #393939;
+    background-color: #102e6a;
     padding-top: 35px;
     padding-bottom: 35px;
 }
@@ -234,7 +237,7 @@ a.footer-link{
 }
 /*Check yourself page*/
 .main-sect{
-    font-size: 35px;
+    font-size: 20px;
 }
 .main-blocks{
     display: grid;
@@ -432,8 +435,60 @@ a.forgot-password{
 #end-sensor{
     width: 230px;
 }
+.question-number{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
 /*Adaptive styles*/
 @media (max-width: 834px) {
+    .accordion-button{
+        flex-direction: column;
+    }
+    .accordion-button h4{
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 30px;
+
+    }
+    .accordion-button::after{
+        margin-left: 0;
+        width: 40px;
+        height: 40px;
+        background-size: 40px;
+    }
+    .accordion-img{
+        width: 60%;
+        height: 60%;
+        margin: 0 auto;
+    }
+    .accord-blocks{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .accord-block{
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        gap: 40px;
+        border-bottom: 1px solid #3156A6;
+    }
+    .accord-title{
+        width: 80%;
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .accord-img img{
+        width: 100px;
+        height: 100px;
+    }
+    .test-end-text{
+        font-size: 18px;
+        text-align: center;
+    }
     .desktop{
         display: none;
     }
@@ -443,16 +498,20 @@ a.forgot-password{
     .wrapper{
         padding: 0 95px;
     }
-    section{
-        padding: 75px 0;
+    header{
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        z-index: 2;
     }
+
     .greeting-sect{
         gap: 0;
     }
     .greeting-info{
         max-width: none;
     }
-    .greeting-sect h1{
+    .greeting-info h1{
         font-size: 40px;
     }
     #logo-animation{
@@ -460,7 +519,7 @@ a.forgot-password{
         width: 200px;
     }
     section{
-        padding: 38px 0;
+        margin: 38px 0;
     }
     h2{
         font-size: 25px;
@@ -471,10 +530,12 @@ a.forgot-password{
     .category-blocks{
         grid-template-columns: 1fr;
         max-width: 624px;
+        gap: 30px;
     }
     .category-block{
-        gap: 26px;
+        gap: 10px;
     }
+
     .video-sect{
         flex-direction: column;
         gap: 30px;
@@ -505,22 +566,25 @@ a.forgot-password{
         grid-template-columns: 1fr;
     }
     .main-block{
-        gap: 15px;
-        margin-top: 84px;
+        gap: 0;
     }
     .test-blocks{
         grid-template-columns: 1fr;
         gap: 33px;
         margin-bottom: 75px;
+        margin-top: 0;
     }
     .modal-test-block{
-        padding: 51px 13px;
+        padding: 0 13px 51px 13px;
     }
     .modal-content.wrapper{
         padding: 0;
     }
     .modal-title{
-        font-size: 30px;
+        font-size: 25px;
+    }
+    .question-number{
+        font-size: 23px;
     }
     .question{
         margin-bottom: 25px;
@@ -537,13 +601,22 @@ a.forgot-password{
     .test-end-sect{
         padding: 45px 10px;
     }
+    section.footer-blocks{
+        margin: 0;
+    }
+    .footer-links{
+        gap: 10px;
+    }
+    a.footer-link{
+        font-size: 12px;
+    }
 }
 @media (max-width: 480px){
     .wrapper{
         padding: 0 15px;
     }
     .video-block iframe{
-        width: 450px;
+        width: 100%;
         height: 280px;
     }
     .greeting-sect{
@@ -553,7 +626,9 @@ a.forgot-password{
     .greeting-info article{
         font-size: 16px;
     }
-
+    .category-info{
+        width: 90%
+    }
     .category-block{
         flex-direction: column;
     }
@@ -584,4 +659,15 @@ a.forgot-password{
         flex-direction: column;
         align-items: center;
     }
+}
+@media (min-width: 765px) and (max-width: 1441px){
+    .wrapper{
+        padding: 0 20px;
+    }
+}
+@media (min-width: 1442px) and (max-width: 1899px){
+    .wrapper{
+        padding: 0 60px;
+    }
+
 }

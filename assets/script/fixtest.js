@@ -1,10 +1,12 @@
 const question2 = document.getElementById('secondTest-question');
 const choices2 = Array.from(document.getElementsByClassName('secondTest-choice'));
-const inputs2 = Array.from(document.getElementsByClassName('secondTestForm'))
-const form_check2 = Array.from(document.getElementsByClassName('secondTestFormCheck'))
+const inputs2 = Array.from(document.getElementsByClassName('secondTestForm'));
+const form_check2 = Array.from(document.getElementsByClassName('secondTestFormCheck'));
 const next2 = document.getElementById('secondTest-next-test-btn');
-const progress_counter2 = document.getElementById('secondTest-progress-counter')
-const progressBarFull2 = document.getElementById('secondTest-progressBarFull')
+const progress_counter2 = document.getElementById('secondTest-progress-counter');
+const progressBarFull2 = document.getElementById('secondTest-progressBarFull');
+const question_number2 = document.getElementById('question-number2');
+const numberOfAnswers2 = document.getElementById('numberOfAnswers2');
 let currentQuestion2 = {};
 let acceptingAnswers2 = false;
 let questionCounter2 = 0;
@@ -142,17 +144,20 @@ getNewQuestion2 = () => {
         next2.innerText = "Завершить"
     }
     questionCounter2++;
-    const questionIndex2 = Math.floor(Math.random() * availableQuestions2.length);
+    const questionIndex2 = questionCounter2-1;
     currentQuestion2 = availableQuestions2[questionIndex2];
-    question2.innerText = questionCounter2 + ". " + currentQuestion2.question;
+    question2.innerText = currentQuestion2.question;
+    question_number2.innerText = "Вопрос " + questionCounter2;
     progress_counter2.innerText = questionCounter2 + " из " + MAX_QUESTIONS2;
     progressBarFull2.style.width = `${(questionCounter2 / MAX_QUESTIONS2) * 100}%`
     inputs2.forEach((e) => {
         e.checked = false;
         if (currentQuestion2.view){
             e.type = "radio"
+            numberOfAnswers2.innerText = "* - можно выбрать один вариант"
         } else {
             e.type = "checkbox"
+            numberOfAnswers2.innerText = "* - можно выбрать несколько вариантов"
         }
     })
     choices2.forEach((choice2) => {
@@ -164,7 +169,7 @@ getNewQuestion2 = () => {
             form_check2[number2-1].classList.add("d-none")
         }
     });
-    availableQuestions2.splice(questionIndex2, 1);
+    // availableQuestions2.splice(questionIndex2, 1);
     acceptingAnswers2 = true;
 };
 

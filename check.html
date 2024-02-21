@@ -121,9 +121,13 @@
 <main >
     <section class="main-sect wrapper">
         <div class="main-blocks">
-            <div class="main-block">
-                <p>Первый шаг на пути финансового развития – это понимание своей стартовой позиции.</p>
-                <p>Определите её с помощью наших тестов.</p>
+            <div class="main-block greeting-info">
+                <h1>Стартовое тестирование</h1>
+                <article>
+                    <p>Первый шаг на пути финансового развития – это понимание своей стартовой позиции.</p>
+                    <p>Определите её с помощью наших тестов.</p>
+                </article>
+
             </div>
             <div class="stairs-block">
                 <div id="stairs-animation"></div>
@@ -155,6 +159,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-test-block">
+                        <div id="question-number" class="question-number"></div>
                         <div class="question" id="question"></div>
                         <div class="answers-block" id="answers-block">
                             <div class="form-check firstTestFormCheck d-none">
@@ -182,6 +187,7 @@
                                 <label class="form-check-label choice" data-number="6" for="flexRadioDefault6"></label>
                             </div>
                         </div>
+                        <div id="numberOfAnswers" class="numberOfAnswers"></div>
                         <button class="next-btn" id="next-test-btn">Дальше</button>
                         <div class="progress-bar" id="progress-bar">
                             <div id="progressBarFull"></div>
@@ -202,6 +208,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-test-block">
+                        <div id="question-number2" class="question-number"></div>
                         <div class="question" id="secondTest-question"></div>
                         <div class="answers-block" id="secondTest-answers-block">
                             <div class="form-check secondTestFormCheck d-none">
@@ -229,6 +236,7 @@
                                 <label class="form-check-label secondTest-choice" data-number="6" for="secondTest-flexRadioDefault6"></label>
                             </div>
                         </div>
+                        <div id="numberOfAnswers2" class="numberOfAnswers"></div>
                         <button class="next-btn" id="secondTest-next-test-btn">Дальше</button>
                         <div class="progress-bar" id="secondTest-progress-bar">
                             <div id="secondTest-progressBarFull"></div>

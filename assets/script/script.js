@@ -77,3 +77,10 @@ const animation11 = lottie.loadAnimation({
     autoplay: true, // автоматический запуск анимации
     path: './assets/animations/matrix.json' // путь к JSON-файлу с анимацией
 });
+const animation12 = lottie.loadAnimation({
+    container: document.getElementById('animated-logo2'), // контейнер для анимации
+    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
+    loop: true, // зацикливание анимации
+    autoplay: true, // автоматический запуск анимации
+    path: './assets/animations/logo.json', // путь к JSON-файлу с анимацией
+});
