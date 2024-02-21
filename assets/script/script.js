@@ -59,7 +59,7 @@ const animation8 = lottie.loadAnimation({
 const animation9 = lottie.loadAnimation({
     container: document.getElementById('about-animation'), // контейнер для анимации
     renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
+    loop: true, // зацикливание анимации
     autoplay: true, // автоматический запуск анимации
     path: './assets/animations/scheme.json' // путь к JSON-файлу с анимацией
 });
