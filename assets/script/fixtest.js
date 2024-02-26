@@ -154,7 +154,7 @@ getNewQuestion2 = () => {
         e.checked = false;
         if (currentQuestion2.view){
             e.type = "radio"
-            numberOfAnswers2.innerText = "* - можно выбрать один вариант"
+            numberOfAnswers2.innerText = ""
         } else {
             e.type = "checkbox"
             numberOfAnswers2.innerText = "* - можно выбрать несколько вариантов"

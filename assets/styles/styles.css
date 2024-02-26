@@ -458,6 +458,9 @@ a.forgot-password{
 }
 /*Adaptive styles*/
 @media (max-width: 834px) {
+    .about-sect h2{
+        margin-bottom: 40px;
+    }
     .accordion-button{
         flex-direction: column;
     }
