@@ -182,8 +182,18 @@ h2{
     height: 113px;
 }
 .category-info{
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 500;
     width: 436px;
+}
+.greeting-sect.index-page{
+    margin-bottom: 0;
+}
+.categories-sect.index-page{
+    margin-top: 40px;
+}
+.about-sect h2{
+    margin-bottom: 0;
 }
 /*Video section*/
 .video-sect{
@@ -271,7 +281,8 @@ a.footer-link{
     align-items: center;
     border: 1px solid #C9CFE5;
     border-radius: 25px;
-    padding: 37px 10px;
+    padding: 37px 10px 37px 37px;
+
 }
 #matrix-animation, #sensor-animation{
     width: 190px;
@@ -300,12 +311,16 @@ a.footer-link{
 .modal-top{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 22px;
+}
+.btn-close{
+    margin-left: 10px;
 }
 .question{
     font-size: 24px;
     margin-bottom: 35px;
+    text-align: justify;
 }
 .answers-block{
     padding-left: 18px;
@@ -432,7 +447,7 @@ a.forgot-password{
 .test-end-text{
     font-size: 24px;
 }
-#end-sensor{
+#end-sensor,#end-sensor2{
     width: 230px;
 }
 .question-number{
@@ -597,6 +612,7 @@ a.forgot-password{
     }
     #stairs-animation{
         margin-right: 0;
+        width: 100%;
     }
     .test-end-sect{
         padding: 45px 10px;
@@ -612,6 +628,28 @@ a.forgot-password{
     }
 }
 @media (max-width: 480px){
+    .test-block{
+        flex-direction: column;
+        padding-top: 23px;
+        padding-bottom: 23px;
+    }
+    .test-info{
+        align-items: center;
+        text-align: center;
+    }
+    .main-blocks{
+        gap: 0;
+    }
+    .category-img{
+        width: 150px;
+        height: 150px;
+    }
+    .category-blocks{
+        gap: 10px;
+    }
+    .category-block{
+        gap: 0;
+    }
     .accordion-button{
         flex-direction: column;
     }
@@ -621,11 +659,15 @@ a.forgot-password{
         margin-top: 30px;
 
     }
+    .footer-logo{
+        max-width: 40%;
+    }
     .accordion-button::after{
         margin-left: 0;
         width: 30px;
         height: 30px;
         background-size: 30px;
+        margin-top: 16px;
     }
     .accordion-img{
         width: 35%;
@@ -660,7 +702,7 @@ a.forgot-password{
     }
     .greeting-sect{
         flex-direction: column;
-        gap: 20px;
+        gap: 0;
     }
     .greeting-info article{
         font-size: 16px;
@@ -679,7 +721,7 @@ a.forgot-password{
     }
     #matrix-animation, #sensor-animation{
         width: auto;
-        height: 146px;
+        height: 100px;
     }
     .modal-body{
         padding: 0;

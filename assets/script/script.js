@@ -1,7 +1,7 @@
 const animation1 = lottie.loadAnimation({
     container: document.getElementById('logo-animation'), // контейнер для анимации
     renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
+    loop: true, // зацикливание анимации
     autoplay: true, // автоматический запуск анимации
     path: './assets/animations/logo.json', // путь к JSON-файлу с анимацией
 });
