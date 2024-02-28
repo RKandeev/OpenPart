@@ -541,7 +541,7 @@ a.forgot-password{
     .greeting-info{
         max-width: none;
     }
-    .greeting-info h1{
+    .greeting-sect h1, .greeting-info h1{
         font-size: 40px;
     }
     #logo-animation{
@@ -644,6 +644,15 @@ a.forgot-password{
     }
 }
 @media (max-width: 480px){
+    .stairs-block{
+        justify-self: center;
+    }
+    .about-sect h2{
+        margin-bottom: 0;
+    }
+    h2.about-header{
+        margin-bottom: 20px;
+    }
     .test-block{
         flex-direction: column;
         padding-top: 23px;
