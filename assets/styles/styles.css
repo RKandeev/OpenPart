@@ -98,7 +98,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 12px;
+    margin-top: 20px;
 }
 nav{
     display: flex;
@@ -134,27 +134,32 @@ a.link-personal:hover{
 }
 /*Greeting section*/
 .greeting-sect{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
     font-size: 20px;
 }
-.greeting-info{
-    max-width: 45%;
+
+.greeting-img{
+    justify-self: center;
 }
 .main-block.greeting-info{
     max-width: none;
 }
-.greeting-info h1{
+.greeting-sect h1, .greeting-info h1{
     font-size: 60px;
     margin-bottom: 23px;
+    grid-area: 1/1/2/3;
 }
 .greeting-info article{
     display: flex;
     flex-direction: column;
     gap: 16px;
     color: #282828;
+    margin-top: 20px;
 }
-
+#logo-animation svg{
+    width: 60%!important;
+}
 
 /*categories section*/
 #magnifier-animation{
@@ -199,8 +204,7 @@ h2{
 .video-sect{
     display: flex;
     justify-content: space-between;
-    gap: 85px;
-    align-items: center;
+    align-items: start;
 }
 .video-info{
     display: flex;
@@ -227,6 +231,9 @@ footer{
     padding-top: 35px;
     padding-bottom: 35px;
 }
+footer section{
+    margin: 0;
+}
 .footer-blocks{
     display: flex;
     justify-content: space-between;
@@ -251,7 +258,7 @@ a.footer-link{
 }
 .main-blocks{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1.5fr 1fr;
     align-items: center;
     gap: 60px;
 }
@@ -441,7 +448,10 @@ a.forgot-password{
     gap: 25px;
     padding: 57px 190px;
     border-radius: 36px;
-    background-color: #f8f8f8;;
+    background-color: #f8f8f8;
+    margin: 80px auto;
+    text-align: center;
+    max-width: 60%;
 
 }
 .test-end-text{
@@ -524,6 +534,8 @@ a.forgot-password{
     }
 
     .greeting-sect{
+        display: flex;
+        justify-content: space-between;
         gap: 0;
     }
     .greeting-info{
@@ -619,6 +631,7 @@ a.forgot-password{
     }
     .test-end-sect{
         padding: 45px 10px;
+        max-width: none;
     }
     section.footer-blocks{
         margin: 0;
