@@ -644,6 +644,9 @@ a.forgot-password{
     }
 }
 @media (max-width: 480px){
+    .video-sect{
+        align-items: center;
+    }
     .stairs-block{
         justify-self: center;
     }
