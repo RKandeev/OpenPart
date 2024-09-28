@@ -10,6 +10,7 @@ const numberOfAnswers2 = document.getElementById('numberOfAnswers2');
 let currentQuestion2 = {};
 let acceptingAnswers2 = false;
 let questionCounter2 = 0;
+let score1 = 0;
 let score2 = 0;
 let availableQuestions2 = [];
 let answers2 = [];
@@ -20,8 +21,9 @@ let questions2 = [
         choice2: 'не превышают запланированную сумму',
         choice3: 'у меня нет плана расходов на месяц',
         choice4: 'не знаю ',
-        answer: ['2'],
+        answer1: ['2'],
         view: true,
+        axis: true,
     },
     {
         question: 'Ваши ежемесячные доходы (заработная плата, бизнес, фриланс) превышают ежемесячные расходы:',
@@ -30,8 +32,9 @@ let questions2 = [
         choice3: 'чаще «нет», чем «да»',
         choice4: 'никогда ',
         choice5: 'не знаю ',
-        answer: ['1'],
+        answer1: ['1'],
         half: ['2'],
+        axis: true,
         view: true,
     },
     {
@@ -41,8 +44,10 @@ let questions2 = [
         choice3: 'менее 10%',
         choice4: 'от 10 до 20%',
         choice5: 'более 20%',
-        answer: ['3'],
-        over: ['4', '5'],
+        answer1: ['3'],
+        over1: ['4'],
+        over2: ['5'],
+        axis: true,
         view: true,
     },
     {
@@ -51,8 +56,9 @@ let questions2 = [
         choice2: 'менее 30%',
         choice3: 'от 30 до 50%',
         choice4: 'более 50%',
-        answer: ['4'],
+        answer1: ['4'],
         half: ['3'],
+        axis: true,
         view: true,
     },
     {
@@ -62,8 +68,10 @@ let questions2 = [
         choice3: 'от 10 до 20% ',
         choice4: 'более 20% ',
         choice5: 'более 50% ',
-        answer: ['4', '5'],
+        answer1: ['4'],
+        answer2: ['5'],
         half: ['3'],
+        axis: false,
         view: true,
     },
     {
@@ -73,8 +81,9 @@ let questions2 = [
         choice3: 'менее 20%',
         choice4: 'от 20% до 50%',
         choice5: 'более 50%',
-        answer: ['5'],
+        answer1: ['5'],
         half: ['4'],
+        axis: false,
         view: true,
     },
     {
@@ -84,8 +93,9 @@ let questions2 = [
         choice3: 'меньше уровня инфляции',
         choice4: 'больше уровня инфляции, но меньше ключевой ставки ЦБ ',
         choice5: 'больше ключевой ставки ЦБ',
-        answer: ['5'],
+        answer1: ['5'],
         half: ['4'],
+        axis: true,
         view: true,
     },
     {
@@ -95,7 +105,8 @@ let questions2 = [
         choice3: 'примерно равны между собой ',
         choice4: 'активы немного больше долгов ',
         choice5: 'активы больше долгов в 2 раза и более',
-        answer: ['5'],
+        answer1: ['5'],
+        axis: false,
         view: true,
     },
     {
@@ -105,8 +116,10 @@ let questions2 = [
         choice3: 'от 10 до 20% ',
         choice4: 'от 20 до 30% ',
         choice5: 'более 30% ',
-        answer: ['2', '3'],
+        answer1: ['2'],
+        answer2: ['3'],
         half: ['4'],
+        axis: false,
         view: true,
     },
     {
@@ -115,15 +128,17 @@ let questions2 = [
         choice2: 'от 1 до 3 месяцев ',
         choice3: 'от 3 до 6 месяцев ',
         choice4: 'более 6 месяцев ',
-        answer: ['2'],
-        over: ['4'],
+        answer1: ['2'],
+        over1: ['4'],
         middle: ['3'],
+        axis: false,
         view: true,
     }
 ]
 let MAX_QUESTIONS2 = 10;
 startGame2 = () => {
     questionCounter2 = 0;
+    score1 = 0;
     score2 = 0;
     availableQuestions2 = [...questions2];
     getNewQuestion2();
@@ -133,7 +148,6 @@ function scroll(){
     modal_top.scrollTop = 0;
 }
 getNewQuestion2 = () => {
-
     answers2 = [];
     if (availableQuestions2.length === 0 || questionCounter2 >= MAX_QUESTIONS2) {
         //go to the end page
@@ -182,11 +196,42 @@ next2.addEventListener('click', () =>{
         }
 
     })
-    if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.answer)){
-        score2++
+    if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.answer1)){
+        if (currentQuestion2.axis){
+            score1++
+        } else {
+            score2++
+        }
+    } else if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.answer2)){
+        if (currentQuestion2.axis){
+            score1++
+        } else {
+            score2++
+        }
+    } else if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.half)){
+        if (currentQuestion2.axis){
+            score1 = score1+0.5
+        } else {
+            score2 = score2+0.5
+        }
+
+    }else if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.over1)){
+        if (currentQuestion2.axis){
+            score1 = score1+2
+        } else {
+            score2 = score2+2
+        }
+    } else if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.over2)){
+        if (currentQuestion2.axis){
+            score1 = score1+2
+        } else {
+            score2 = score2+2
+        }
     }
-    console.log(score2)
+    console.log("Первый показатель="+ score1)
+    console.log("Второй показатель="+ score2)
     getNewQuestion2();
     scroll();
 });
+
 startGame2();
