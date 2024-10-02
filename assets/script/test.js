@@ -169,23 +169,27 @@ function scroll(){
     const modal_top = document.getElementById('modal_top')
     modal_top.scrollTop = 0;
 }
-next.addEventListener('click', () =>{
+
+next.addEventListener('click', async() =>{
+
     if (!acceptingAnswers) return;
+    
     acceptingAnswers = false;
     inputs.forEach((e) =>{
         if (e.checked){
             const selectedAnswer = e.dataset["number"];
             answers.push(selectedAnswer);
         }
-
     })
     if (JSON.stringify(answers) === JSON.stringify(currentQuestion.answer)){
         score++
     }
     console.log(score)
+    
+    if (next.innerText === 'ЗАВЕРШИТЬ') {
+        localStorage.setItem('firstTestResult', score)
+    }
     getNewQuestion();
     scroll();
-
-
 });
 startGame();

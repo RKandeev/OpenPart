@@ -239,8 +239,15 @@ next2.addEventListener('click', () =>{
     // величину).
     console.log("Первый показатель="+ score1)
     console.log("Второй показатель="+ score2)
+
+    if (next2.innerText === 'ЗАВЕРШИТЬ') {
+        localStorage.setItem('secondTestResult1', score1)
+        localStorage.setItem('secondTestResult2', score2)   
+    }
+
     getNewQuestion2();
     scroll();
+
 });
 
 startGame2();
