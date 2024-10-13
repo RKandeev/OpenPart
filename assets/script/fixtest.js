@@ -198,34 +198,34 @@ next2.addEventListener('click', () =>{
     })
     if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.answer1)){
         if (currentQuestion2.axis){
-            score1++
+            score1+= 100
         } else {
-            score2++
+            score2+= 100
         }
     } else if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.answer2)){
         if (currentQuestion2.axis){
-            score1++
+            score1+= 100
         } else {
-            score2++
+            score2+= 100
         }
     } else if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.half)){
         if (currentQuestion2.axis){
-            score1 = score1+0.5
+            score1 += 50
         } else {
-            score2 = score2+0.5
+            score2 += 50
         }
 
     }else if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.over1)){
         if (currentQuestion2.axis){
-            score1 = score1+2
+            score1 += 200
         } else {
-            score2 = score2+2
+            score2 += 200
         }
     } else if (JSON.stringify(answers2) === JSON.stringify(currentQuestion2.over2)){
         if (currentQuestion2.axis){
-            score1 = score1+2
+            score1 += 200
         } else {
-            score2 = score2+2
+            score2 += 200
         }
     }
 
@@ -242,7 +242,7 @@ next2.addEventListener('click', () =>{
 
     if (next2.innerText === 'ЗАВЕРШИТЬ') {
         localStorage.setItem('secondTestResult1', score1)
-        localStorage.setItem('secondTestResult2', score2)   
+        localStorage.setItem('secondTestResult2', score2)
     }
 
     getNewQuestion2();
