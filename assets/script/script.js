@@ -89,8 +89,6 @@ const animation12 = lottie.loadAnimation({
 const lazyAnim9 = document.getElementById('about-animation');
 
 
-
-
 let observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.intersectionRatio >= 0.5) { // Проверяем, что элемент видим наполовину
