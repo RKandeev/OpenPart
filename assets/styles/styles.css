@@ -213,7 +213,7 @@ h2{
     font-size: 30px;
     max-width: 40%;
 }
-.video-block iframe{
+.video-block video{
     border-radius: 10px;
     width: 630px;
     height: 400px;
@@ -582,8 +582,8 @@ a.forgot-password{
         align-items: center;
         gap: 30px;
     }
-    .video-block iframe{
-        width: 640px;
+    .video-block video{
+        width: 360px;
     }
     .video-info h3{
         font-size: 25px;
