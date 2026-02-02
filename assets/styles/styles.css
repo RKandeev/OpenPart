@@ -305,6 +305,13 @@ a.footer-link{
     border-radius: 7px;
     white-space: nowrap;
     cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+a.test-btn, a.test-btn:link, a.test-btn:visited, a.test-btn:hover, a.test-btn:active {
+    color: #fff !important;
+    text-decoration: none;
 }
 .test-info{
     display: flex;
