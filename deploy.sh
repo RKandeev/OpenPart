@@ -13,7 +13,7 @@ if [[ $CONFIRM != "да" ]]; then
 fi
 
 
-sshpass rsync -avz "$LOCAL_BUILD_FOLDER/" "$REMOTE_USER@$REMOTE_SERVER:$REMOTE_PATH"
+sshpass rsync -avz --exclude '.htaccess' "$LOCAL_BUILD_FOLDER/" "$REMOTE_USER@$REMOTE_SERVER:$REMOTE_PATH"
 
 if [ $? -eq 0 ]; then
     echo $'\e[32;1m Успешный деплой: https://'$REMOTE_SERVER

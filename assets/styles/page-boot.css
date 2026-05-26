@@ -1,0 +1,50 @@
+#page-boot {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483646;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 24px;
+    box-sizing: border-box;
+    background: #f8f8f8;
+}
+
+#page-boot.is-visible {
+    display: flex;
+}
+
+#page-boot-logo {
+    width: min(320px, 82vw);
+    height: auto;
+    animation: page-boot-pulse 1.8s ease-in-out infinite;
+    will-change: opacity, transform;
+}
+
+#page-boot-text {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #3156a6;
+    letter-spacing: 0.02em;
+}
+
+@keyframes page-boot-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.82;
+        transform: scale(1.02);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #page-boot-logo {
+        animation: none;
+    }
+}
