@@ -1,103 +1,55 @@
-const animation1 = lottie.loadAnimation({
-    container: document.getElementById('logo-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/logo.json', // путь к JSON-файлу с анимацией
-});
+(function () {
+    if (typeof lottie === 'undefined') {
+        return;
+    }
 
-const animation2 = lottie.loadAnimation({
-    container: document.getElementById('chess-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/chess.json' // путь к JSON-файлу с анимацией
-});
-const animation3 = lottie.loadAnimation({
-    container: document.getElementById('magnifier-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/magnifier.json' // путь к JSON-файлу с анимацией
-});
-const animation4 = lottie.loadAnimation({
-    container: document.getElementById('directions-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/directions.json' // путь к JSON-файлу с анимацией
-});
-const animation5 = lottie.loadAnimation({
-    container: document.getElementById('calc-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/calc.json' // путь к JSON-файлу с анимацией
-});
-const animation6 = lottie.loadAnimation({
-    container: document.getElementById('stairs-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/stairs.json' // путь к JSON-файлу с анимацией
-});
-const animation7 = lottie.loadAnimation({
-    container: document.getElementById('sensor-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/sensor.json' // путь к JSON-файлу с анимацией
-});
-const animation8 = lottie.loadAnimation({
-    container: document.getElementById('matrix-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/matrix.json' // путь к JSON-файлу с анимацией
-});
+    var animations = [
+        { id: 'logo-animation', path: './assets/animations/logo.json' },
+        { id: 'chess-animation', path: './assets/animations/chess.json' },
+        { id: 'magnifier-animation', path: './assets/animations/magnifier.json' },
+        { id: 'directions-animation', path: './assets/animations/directions.json' },
+        { id: 'calc-animation', path: './assets/animations/calc.json' },
+        { id: 'stairs-animation', path: './assets/animations/stairs.json' },
+        { id: 'sensor-animation', path: './assets/animations/sensor.json' },
+        { id: 'matrix-animation', path: './assets/animations/matrix.json' },
+        { id: 'about-animation', path: './assets/animations/scheme.json', threshold: 0.5 },
+        { id: 'end-sensor', path: './assets/animations/sensor.json' },
+        { id: 'end-sensor2', path: './assets/animations/matrix.json' },
+        { id: 'animated-logo2', path: './assets/animations/logo.json' }
+    ];
 
-const animation9 = lottie.loadAnimation({
-    container: document.getElementById('about-animation'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: false, // автоматический запуск анимации
-    path: './assets/animations/scheme.json' // путь к JSON-файлу с анимацией
-});
-const animation10 = lottie.loadAnimation({
-    container: document.getElementById('end-sensor'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/sensor.json' // путь к JSON-файлу с анимацией
-});
-const animation11 = lottie.loadAnimation({
-    container: document.getElementById('end-sensor2'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/matrix.json' // путь к JSON-файлу с анимацией
-});
-const animation12 = lottie.loadAnimation({
-    container: document.getElementById('animated-logo2'), // контейнер для анимации
-    renderer: 'svg', // тип рендерера (может быть 'svg', 'canvas' или 'html')
-    loop: false, // зацикливание анимации
-    autoplay: true, // автоматический запуск анимации
-    path: './assets/animations/logo.json', // путь к JSON-файлу с анимацией
-});
-
-
-const lazyAnim9 = document.getElementById('about-animation');
-
-
-let observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.intersectionRatio >= 0.5) { // Проверяем, что элемент видим наполовину
-            animation9.play();
+    function whenVisible(element, threshold, callback) {
+        if (!('IntersectionObserver' in window)) {
+            callback();
+            return;
         }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    callback();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: threshold || 0.2, rootMargin: '80px' });
+
+        observer.observe(element);
+    }
+
+    animations.forEach(function (config) {
+        var container = document.getElementById(config.id);
+        if (!container) {
+            return;
+        }
+
+        whenVisible(container, config.threshold, function () {
+            lottie.loadAnimation({
+                container: container,
+                renderer: 'svg',
+                loop: false,
+                autoplay: true,
+                path: config.path
+            });
+        });
     });
-}, { threshold: [0, 0.5] });
-
-observer.observe(lazyAnim9);
-
-
-
+})();
